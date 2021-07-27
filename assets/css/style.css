@@ -1,0 +1,112 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+div.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(242, 248, 248);
+    padding: 10px;
+    border-radius: 3px;
+}
+
+form {
+    text-align: center;
+}
+
+h1 {
+    color: #222;
+    font-size: 1.5rem;
+}
+
+fieldset {
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%;
+}
+
+.textArea {
+    display: none;
+
+}
+
+
+.inputs {
+    display: flex;
+    flex: 1;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.btn {
+    display: flex;
+}
+
+.btn-copiar {
+    display: none;
+    flex: 1;
+    width: 100%;
+}
+
+.btn-calcular-novamente {
+    flex: 2;
+    display: none;
+    margin-right: 10px;
+    width: 100%;
+}
+
+button {
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+footer {
+    margin-bottom: 5px;
+    color:rgb(242, 248, 248)
+}
+
+a {
+    text-decoration: none;
+    color: rgb(242, 248, 248)
+}
+
+
+
+@media (max-width: 450px) {
+    div.container {
+        width: 90vw;
+    }
+
+    .inputs {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+}
+
