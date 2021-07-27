@@ -16,7 +16,6 @@ body {
 }
 
 div.container {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
     background-color: rgb(242, 248, 248);
@@ -29,8 +28,9 @@ form {
 }
 
 h1 {
-    color: #222;
+    color: rgb(242, 248, 248);
     font-size: 1.5rem;
+    text-align: center;
 }
 
 fieldset {
