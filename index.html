@@ -8,63 +8,68 @@
     <title>Calculadora de atendimento</title>
 </head>
 <body>
-    <div class="container">
-       <main>
-
-        <form method="POST">
+    <div class="container-ex">
+        <header>
             <h1>Calculadora de Atendimento</h1>
-            <fieldset>
-                <legend>Informações de horário</legend>
-                <label">
-                    Inicio
-                    <input class="inputs" type="time" name="hInicial" id="hInicial" value="07:00" >
-                </label>
-                <label">
-                    Término
-                    <input class="inputs"  type="time" name="hTermino" id="hTermino" value="17:00" >
-                </label>
-                <label">
-                    Almoço
-                    <input class="inputs"  type="time" name="hAlmoco" id="hAlmoco" value="01:00" >
-                </label>
-            </fieldset>
-
-            <fieldset class="textArea">
-                <legend>Resultado</legend>
-                <textarea name="resultado" id="resultado" cols="40" rows="15"></textarea>
-            </fieldset>
-
-            <fieldset>
-                <legend>Informações adicionais</legend>
-
-                <label>
-                    Intervalo:
-                    <select  class="inputs" id="intervalo">
-                        <option value="10">10min</option>
-                        <option value="15">15min</option>
-                        <option value="20">20min</option>
-                        <option value="25">25min</option>
-                        <option value="30">30min</option>
-                        <option value="35">35min</option>
-                        <option value="40">40min</option>
-                    </select>
-            </label>
-
-            <label">
-                    Atendentes
-                    <input class="inputs"  type="number" name="atendente" id="atendente" value="1" >
-            </label>
-
-            </fieldset>
-
-            <div class="btn">
-                <button class="btn-calcular" type="submit">Calcular</button>
-                <button class="btn-calcular-novamente" type="submit">Fazer novo Calculo</button>
-                <button class="btn-copiar">Copiar</button>
-            </div>
-        </form>
-       </main>
+        </header>
+        <div class="container">
+            <main>
+             <form method="POST">
+                 <fieldset>
+                     <legend>Informações de horário</legend>
+                     <label">
+                         Inicio
+                         <input class="inputs" type="time" name="hInicial" id="hInicial" value="07:00" >
+                     </label>
+                     <label">
+                         Término
+                         <input class="inputs"  type="time" name="hTermino" id="hTermino" value="17:00" >
+                     </label>
+                     <label">
+                         Almoço
+                         <input class="inputs"  type="time" name="hAlmoco" id="hAlmoco" value="01:00" >
+                     </label>
+                 </fieldset>
+     
+                 <fieldset class="textArea">
+                     <legend>Resultado</legend>
+                     <textarea name="resultado" id="resultado" cols="40" rows="15"></textarea>
+                 </fieldset>
+     
+                 <fieldset>
+                     <legend>Informações adicionais</legend>
+     
+                     <label>
+                         Intervalo:
+                         <select  class="inputs" id="intervalo">
+                             <option value="10">10min</option>
+                             <option value="15">15min</option>
+                             <option value="20">20min</option>
+                             <option value="25">25min</option>
+                             <option value="30">30min</option>
+                             <option value="35">35min</option>
+                             <option value="40">40min</option>
+                         </select>
+                 </label>
+     
+                 <label">
+                         Atendentes
+                         <input class="inputs"  type="number" name="atendente" id="atendente" value="1" >
+                 </label>
+     
+                 </fieldset>
+     
+                 <div class="btn">
+                     <button class="btn-calcular" type="submit">Calcular</button>
+                     <button class="btn-calcular-novamente" type="submit">Fazer novo Calculo</button>
+                     <button class="btn-copiar">Copiar</button>
+                 </div>
+             </form>
+            </main>
+         </div>
     </div>
+
+   
 
     <footer>
         <div id='julinhodev'>
