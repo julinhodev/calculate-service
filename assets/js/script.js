@@ -44,42 +44,30 @@ function calcular(e){
 function mostrarResultado(resultado, horaFinal, atendentes, inicioAtend, finalAtend, hAlmoco, intervalo){
     let d = new Date()
     let data = `${checkData(d.getDate())}/${checkData(d.getMonth())}/${d.getFullYear()}`
-    let hora = `${checkData(d.getHours())}:${checkData(d.getMinutes())}:${checkData(d.getSeconds())}`
+    let hora = `${checkData(d.getHours())}:${checkData(d.getMinutes())}`
 
 if(horaFinal !== '00'){
     document.querySelector('#resultado').innerHTML =    
-`Início de atendimento: ${inicioAtend} hrs.
-Fim do atendimento: ${finalAtend} hrs.
-Hora de almoço: ${hAlmoco} hrs.
-Intervalo de atendimento: ${document.querySelector('#intervalo').value} minutos.
-Quantidade de atendentes: ${atendentes}.
-Atendimento por atendente: ${resultado + 1}.
-Atendimento total por dia: ${(resultado * atendentes)  + 1}.
-Data do cálculo: ${data}.
-Hora do cálculo: ${hora}.
+`O atendimento começará ás ${inicioAtend[0]}:${inicioAtend[1]} horas.
+O atendimento encerrará ás ${finalAtend[0]}:${finalAtend[1]} horas.
+Os atendentes terão ${hAlmoco[0]}:${hAlmoco[1]} hora de almoço.
+O intervalo entre um atendimento e outro será de ${document.querySelector('#intervalo').value} minutos.
+O atendimento conta com ${plural(atendentes)}.
 
+Baseado nos dados acima, será possível atender um total de ${resultado + 1} pessoas por atendente, e um total de ${(resultado + 1 ) * atendentes} pessoas no dia!
 
-
-
-
-Desenvolvido por @julinhodev :)`                                   
+Esta simulação foi realizada ás ${hora} do dia ${data}.`                                   
     } else {
     document.querySelector('#resultado').innerHTML =    
-`Início de atendimento: ${inicioAtend} hrs.
-Fim do atendimento: ${finalAtend} hrs.
-Hora de almoço: ${hAlmoco} hrs.
-Intervalo de atendimento: ${document.querySelector('#intervalo').value} minutos.
-Quantidade de atendentes: ${atendentes}.
-Atendimento por atendente: ${resultado}.
-Atendimento total por dia: ${resultado * atendentes}.
-Data do cálculo: ${data}.
-Hora do cálculo: ${hora}.
+`O atendimento começará ás ${inicioAtend[0]}:${inicioAtend[1]} horas.
+O atendimento encerrará ás ${finalAtend[0]}:${finalAtend[1]} horas.
+Os atendentes terão ${hAlmoco[0]}:${hAlmoco[1]} hora de almoço.
+O intervalo entre um atendimento e outro será de ${document.querySelector('#intervalo').value} minutos.
+O atendimento contará com ${plural(atendentes)}.
 
+Baseado nos dados acima, será possível atender um total de ${resultado} pessoas por atendente, e um total de ${resultado * atendentes} pessoas no dia!
 
-
-
-
-Desenvolvido por @julinhodev :)`     
+Esta simulação foi realizada ás ${hora} do dia ${data}.`      
     }
 }
 
@@ -112,4 +100,8 @@ function novoCalculo(e){
     document.querySelector('.textArea').style.display = 'none'
     document.querySelector('.btn-copiar').style.display = 'none'
     document.querySelector('.btn-calcular-novamente').style.display = 'none'
+}
+
+function plural(atendentes){
+    return atendentes <= 1 ? `${atendentes} atendente` : `${atendentes} atendentes`
 }
