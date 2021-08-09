@@ -37,16 +37,17 @@ function calcular(e){
             calcMinutos = parseInt(finalAtend[1])  * mlMinutos
             resultado = ((calcHora + calcMinutos) - subtracao ) / intervalo
         }    
-    mostrarResultado(resultado, finalAtend[1], qtAtendentes, inicioAtend, finalAtend, hAlmoco, intervalo)
+    mostrarResultado(resultado, finalAtend[1], qtAtendentes, inicioAtend, finalAtend, hAlmoco)
     ocultarTelas()
 }
 
-function mostrarResultado(resultado, horaFinal, atendentes, inicioAtend, finalAtend, hAlmoco, intervalo){
+function mostrarResultado(resultado, horaFinal, atendentes, inicioAtend, finalAtend, hAlmoco){
     let d = new Date()
-    let data = `${checkData(d.getDate())}/${checkData(d.getMonth())}/${d.getFullYear()}`
+    let data = `${checkData(d.getDate())}/${checkData(d.getMonth() + 1)}/${d.getFullYear()}`
     let hora = `${checkData(d.getHours())}:${checkData(d.getMinutes())}`
 
 if(horaFinal !== '00'){
+    sobra(resultado)
     document.querySelector('#resultado').innerHTML =    
 `O atendimento começará ás ${inicioAtend[0]}:${inicioAtend[1]} horas.
 O atendimento encerrará ás ${finalAtend[0]}:${finalAtend[1]} horas.
@@ -54,10 +55,11 @@ Os atendentes terão ${hAlmoco[0]}:${hAlmoco[1]} hora de almoço.
 O intervalo entre um atendimento e outro será de ${document.querySelector('#intervalo').value} minutos.
 O atendimento conta com ${plural(atendentes)}.
 
-Baseado nos dados acima, será possível atender um total de ${resultado + 1} pessoas por atendente, e um total de ${(resultado + 1 ) * atendentes} pessoas no dia!
+Baseado nos dados acima, será possível atender um total de ${Math.ceil(resultado + 1)} pessoas por atendente, e um total de ${Math.ceil(resultado + 1 * atendentes)} pessoas no dia!
 
-Esta simulação foi realizada ás ${hora} do dia ${data}.`                                   
+Esta simulação foi realizada ás ${hora} do dia ${data}.`                               
     } else {
+        sobra(resultado)
     document.querySelector('#resultado').innerHTML =    
 `O atendimento começará ás ${inicioAtend[0]}:${inicioAtend[1]} horas.
 O atendimento encerrará ás ${finalAtend[0]}:${finalAtend[1]} horas.
@@ -65,7 +67,7 @@ Os atendentes terão ${hAlmoco[0]}:${hAlmoco[1]} hora de almoço.
 O intervalo entre um atendimento e outro será de ${document.querySelector('#intervalo').value} minutos.
 O atendimento contará com ${plural(atendentes)}.
 
-Baseado nos dados acima, será possível atender um total de ${resultado} pessoas por atendente, e um total de ${resultado * atendentes} pessoas no dia!
+Baseado nos dados acima, será possível atender um total de ${Math.ceil(resultado)} pessoas por atendente, e um total de ${(Math.ceil(resultado * atendentes))} pessoas no dia!
 
 Esta simulação foi realizada ás ${hora} do dia ${data}.`      
     }
@@ -104,4 +106,12 @@ function novoCalculo(e){
 
 function plural(atendentes){
     return atendentes <= 1 ? `${atendentes} atendente` : `${atendentes} atendentes`
+}
+
+function sobra(resultado){
+    if(resultado.toString().length > 2){
+        return alert(`Os horários informados não batem com o intervalo de atendimento, desta forma irá faltar ou sobrar minutos para o último candidato!`)
+    } else {
+        return 
+    }
 }
