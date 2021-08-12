@@ -55,7 +55,7 @@ Os atendentes terão ${hAlmoco[0]}:${hAlmoco[1]} hora de almoço.
 O intervalo entre um atendimento e outro será de ${document.querySelector('#intervalo').value} minutos.
 O atendimento conta com ${plural(atendentes)}.
 
-Baseado nos dados acima, será possível atender um total de ${Math.ceil(resultado + 1)} pessoas por atendente, e um total de ${Math.ceil(resultado + 1 * atendentes)} pessoas no dia!
+Baseado nos dados acima, será possível atender um total de ${Math.ceil(resultado + 1)} pessoas por atendente, e um total de ${Math.ceil((resultado + 1 ) * atendentes)} pessoas no dia!
 
 Esta simulação foi realizada ás ${hora} do dia ${data}.`                               
     } else {
